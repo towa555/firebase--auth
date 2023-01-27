@@ -3,12 +3,13 @@ import Signin from './component/Signin'
 import './App.css';
 import Signup from './component/Signup';
 import Account from './component/Account';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route , useLocation} from "react-router-dom";
 import { AuthContextProvider } from './context/Authcontext';
 import ProtectedRoute from './component/protectedRoute';
 
 
 function App() {
+  const location = useLocation()
   return (
     <div>
       <h1>Firebase Auth & Context</h1>

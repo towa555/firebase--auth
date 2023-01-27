@@ -10,9 +10,24 @@ function Signup() {
 const [email ,setEmail] = useState ('')
 const [password ,setPassword] = useState ('')
 const [error ,setError] = useState ('')
+const [message, setMessage] = useState ('')
+const [show, setShow] = useState ('')
+
 const {createUser} = UserAuth()
 const navigate = useNavigate()
-
+const handleShow = () =>{
+  setShow(!show)
+}
+const passwordValidator = () =>{
+  const regEx = /^.{8,16}$/
+  if(regEx.test(password)){
+    setMessage("password is  valid")
+  }else if(!regEx.test(password)){
+    setMessage("Password should at least have 8 to 16 characters")
+  }else{
+    setMessage("")
+  }
+};
 const handleSubmit = async (e) =>{
   e.preventDefault()
   setError('')
@@ -38,12 +53,14 @@ const handleSubmit = async (e) =>{
         <div>
           <label>Email Address</label>
           <input onChange={(e) =>setEmail(e.target.value)} type="email" name="email"/>
+
         </div>
         <div>
-          <label>Password</label>
-          <input onChange={(e) =>setPassword(e.target.value)} type="password" name="password"/>
+          <label onClick={handleShow }>Password</label>
+          <input onChange={(e) =>setPassword(e.target.value)} type={show?"text":"password"} name="password"/>
         </div>
-        <button>Sign Up</button>
+        <button onClick={passwordValidator}>Sign Up</button>
+        {message}
        </form>
     </div>
   );
