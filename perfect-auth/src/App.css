@@ -1,38 +1,373 @@
-.App {
-  text-align: center;
+.middle {
+  top: 38%;
+  left: 18%;
+  position: relative;
+  transform: translate(-50%, -50%);
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn1 {
+  background: none;
+  border: 2px solid #000;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  padding: 12px 12px;
+  min-width: 200px;
+  margin: 0px;
+  cursor: pointer;
+  transition: color 0.5s linear;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn1:hover {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn1::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.btn1::before {
+  transform: scaleX(0);
+}
+
+.btn2::before {
+  transform: scaleY(0);
+}
+
+.btn1:hover::before {
+  transform: scaleX(1);
+}
+
+.btn2:hover::before {
+  transform: scaleY(1);
+}
+
+/* =================================================================
+signup page*/
+/* *{
+  border: 1px solid #000;
+} */
+.contact-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 10px;
+
+
+
 }
 
-.App-link {
-  color: #61dafb;
+.contact-wrapper1 {
+  width: 30%;
+  height: 700px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #ffffff77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 3px solid #68686880;
+  border-left: 3px solid #68686888;
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.contact-wrapper2 {
+  width: 100%;
+  height: 700px;
+  border-radius: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contact-header {
+  margin-top: -150px;
+  font-size: 2.5rem;
+  line-height: 6.5rem;
+  text-transform: capitalize;
+
 }
+
+.contact-text {
+  padding: 5px;
+  width: 380px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+
+}
+
+input {
+  padding: 20px;
+  margin: 10px;
+  width: 350px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: gray;
+
+}
+
+/* .wrapper-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+} */
+.message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(255, 0, 0);
+  transition: 0.5s;
+  font-weight: bold;
+  margin: 5px;
+  padding: 10px;
+  border-bottom: 2px solid #000;
+}
+
+.link {
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.link:hover {
+  transition: 0.5s;
+  color: #fff;
+  background-color: red;
+}
+
+.contact-social {
+  position: relative;
+  top: 30%;
+}
+
+label {
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+@media only screen and (max-width:1400px) {
+
+
+  .contact-header {
+    margin-top: -130px;
+    font-size: 2rem;
+    line-height: 6.5rem;
+    text-transform: capitalize;
+
+  }
+
+  .middle {
+    top: 40%;
+    left: 25%;
+    position: relative;
+    transform: translate(-50%, -50%);
+  }
+
+  .contact-text {
+    padding: 5px;
+    width: 320px;
+    margin-left: 28px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+  }
+
+  input {
+    padding: 20px;
+    margin: 10px;
+    width: 280px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: gray;
+
+  }
+
+
+}
+
+
+
+@media only screen and (max-width: 1160px) {
+
+
+
+  .contact-wrapper2 {
+    display: none;
+  }
+
+
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+
+
+  }
+
+  .contact-wrapper1 {
+    width: 100%;
+    height: 700px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 3px solid #68686880;
+    border-left: 3px solid #68686888;
+  }
+  form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact-wrapper2 {
+    width: 100%;
+    height: 700px;
+    border-radius: 1;
+  }
+
+  .contact-header {
+    margin-top: -130px;
+    font-size: 2rem;
+    line-height: 6.5rem;
+    text-transform: capitalize;
+
+  }
+
+  .contact-text {
+    padding: 5px;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+  }
+
+  input {
+    padding: 20px;
+    margin: 10px;
+    width: 240px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: gray;
+
+  }
+
+
+  .middle {
+    top: 40%;
+    left: 31%;
+    position: relative;
+    transform: translate(-50%, -50%);
+  }
+
+
+}
+
+
+
+
+@media only screen and (max-width: 1260px) {
+
+
+  .contact-text {
+    padding: 5px;
+    width: 290px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .contact-header {
+    margin-top: -130px;
+    font-size: 2rem;
+    line-height: 4rem;
+    margin-left: 25px;
+    text-transform: capitalize;
+
+  }
+
+
+
+
+  input {
+    padding: 20px;
+    margin: 10px;
+    width: 260px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: gray;
+
+  }
+
+}
+
