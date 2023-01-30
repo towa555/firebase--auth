@@ -63,7 +63,7 @@ const handleSubmit = async (e) =>{
           <label >Password</label>
           <div className='wrap' >
           <input onChange={(e) =>setPassword(e.target.value)} type={show?"text":"password"} name="password"/>
-         <b onClick={handleShow }>0</b>
+         <img  onClick={handleShow } className='contact-eye' src='./image/eye.png' alt='' />
          </div>
         </div>
         <div className="middle">
@@ -71,7 +71,9 @@ const handleSubmit = async (e) =>{
         </div>
         <p className='message'>{message} </p>
          <div className='contact-social'>
-          social media links
+         <img className='contact-icon' src='./image/facebook.png' alt='' />
+         <img className='contact-icon' src='./image/instagram.png' alt='' />
+         <img className='contact-icon' src='./image/whatsapp.png' alt='' />
          </div>
        </form>
        </div>
