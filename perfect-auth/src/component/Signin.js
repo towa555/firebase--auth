@@ -2,6 +2,8 @@ import {motion} from 'framer-motion'
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from '../context/Authcontext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signin() {
   const [email, setEmail] = useState('')
@@ -9,7 +11,9 @@ function Signin() {
   const [error, setError] = useState('')
   const navigate = useNavigate()
   const {signIn}  = UserAuth()
-
+  const notify = () =>{
+    toast('successfully logged in')
+  }
 const handleSubmit = async (e) => {
 e.preventDefault();
 setError('')
@@ -47,13 +51,14 @@ navigate('/account')
           <input onChange={(e) =>setPassword(e.target.value)} type="password" name="email" />
         </div>
         <div className="middle">
-        <button className='btn1' onClick={error}>Sign In</button>
+        <button className='btn1' onClick={notify} >Sign In</button>
         </div>
       </form>
       </div>
         <div>
         <img className='contact-wrapper2' src='./image/pngwing.com.png' alt='' />
         </div>
+        <ToastContainer />
     </motion.div>
 
   );
