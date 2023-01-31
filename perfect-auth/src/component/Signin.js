@@ -8,13 +8,14 @@ function Signin() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate()
-  const { SignIn } = UserAuth();
+  const {signIn}  = UserAuth()
 
-const handleSubmit = async() => {
-email.preventDefault();
+const handleSubmit = async (e) => {
+e.preventDefault();
 setError('')
 try{
-await SignIn(email, password)
+await signIn
+(email, password)
 navigate('/account')
 }catch(e){
   setError(e.message)
@@ -28,6 +29,7 @@ navigate('/account')
     initial={{width:0}}
     animate={{width:"100%"}}
     exit={{Y:0,transition:{duration:1.5}}}>
+
       <div className='contact-wrapper1'>
       <div>
         <h1 className='contact-header'>Sign into your account</h1>
@@ -45,7 +47,7 @@ navigate('/account')
           <input onChange={(e) =>setPassword(e.target.value)} type="password" name="email" />
         </div>
         <div className="middle">
-        <button className='btn1'>Sign In</button>
+        <button className='btn1' onClick={error}>Sign In</button>
         </div>
       </form>
       </div>
